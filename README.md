@@ -13,6 +13,9 @@ This project will emphasize tasks learned in Module 3 that focus on utilizing Gi
 * requests
 
 ## :triangular_flag_on_post: Version Control 
+* Git Add to all all of the changes to the staging area
+* Git Commit to push the changes to the remote repo. Be sure to add a comment detailing the reason for the commit.  A good habit to have.
+
 
 
 ## Objectives
@@ -57,6 +60,10 @@ This project will emphasize tasks learned in Module 3 that focus on utilizing Gi
 * Documentation
 * Presentation
 * Professionalism
+
+
+
+#### https://github.com/markdown-templates/markdown-emojis
 
 
 
