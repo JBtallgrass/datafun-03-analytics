@@ -59,4 +59,4 @@ if __name__ == '__main__':
     main()
 
 print()
-print("Module 1 homework by Jason Ballard")
+print("Module homework by Jason Ballard")
