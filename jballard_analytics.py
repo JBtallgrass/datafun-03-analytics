@@ -259,3 +259,8 @@ def main():
     # What do you want to extract and write? What export format will you use?
     # Process at least TWO unique data sets and describe your work clearly.
     # Use the README.md and your code to showcase your ability to work with data.
+
+    
+if __name__ == "__main__":
+    main()
+
