@@ -8,7 +8,7 @@ import time
 from pathlib import Path # added for consistnecy in using Path
 
 # Import my modules
-import JBallard_utils
+import jballard_utils
 
 # Function Definitions
 
