@@ -9,7 +9,6 @@ import pandas as pd
 # External library imports (requires virtual environment)
 import requests
 
-
 # Local module imports
 import jballard_projsetup
 import jballard_utils
@@ -57,7 +56,7 @@ def fetch_and_write_json_data(json_folder_name, json_filename,json_url,data_type
     else:
         print(f"Failed to fetch {data_type} data: {response.status_code}")
 
-def fetch_and_write_txt_data(txt_folder_name, txt_filename, txt_url, data_type='text'):
+def fetch_and_write_txt_data(txt_folder_name, txt_filename, txt_url, data_type='txt'):
     response = requests.get(txt_url)
     if response.status_code == 200:
         write_to_file(txt_folder_name, txt_filename, response.text)
@@ -78,7 +77,7 @@ def process_txt_file(txt_url, txt_filename):
     try:
         # Read the input file
         with open(txt_url, 'r', encoding='utf-8') as file:
-            text_url = file.read()
+            txt_url = file.read()
 
         # Normalize the text to lowercase and split into words
         words = txt_url.lower().split()
@@ -98,7 +97,7 @@ def process_txt_file(txt_url, txt_filename):
             for word, freq in word_frequency.items():
                 file.write(f"{word}: {freq}\n")
 
-        print(f"Text data processed successfully. Output saved to {txt_filename.txt}")
+        print(f"Txt data processed successfully. Output saved to {txt_filename.txt}")
 
     except IOError as e:
         print(f"I/O error({e.errno}): {e.strerror}")
@@ -199,7 +198,7 @@ def fetch_txt_data(folder_name, url):
         # Assuming the response content is text data
         file_path = Path(folder_name) / 'data.txt'
         with open(file_path, 'w') as file:
-            file.write(response.text)
+            file.write(response.txt)
         print(f"Text data saved to {file_path}")
 
     except requests.exceptions.HTTPError as errh:
@@ -216,9 +215,11 @@ def fetch_txt_data(folder_name, url):
 def main():
     ''' Main function to demonstrate module capabilities. '''
 
-    print(f"Name: {yourname_attr.my_name_string}")
+    print(f"Name: {jballard_utils.byline()}")
 
-    txt_url = 'https://shakespeare.mit.edu/romeo_juliet/full.html'
+    # check all 'URL' to make sure the links work
+
+    txt_url = 'https://www.gutenberg.org/cache/epub/1946/pg1946.txt'
 
     csv_url = 'https://raw.githubusercontent.com/MainakRepositor/Datasets/master/World%20Happiness%20Data/2020.csv' 
 
