@@ -20,55 +20,47 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 # Data acquisition
 
 def write_to_file(folder_name, filename, content, is_binary=False):
+    # Determine the mode to open the file in
     mode = 'wb' if is_binary else 'w'
-    encoding = None if is_binary else 'utf-8' # use utf-8 encoding for text files
+    
+    # Choose encoding for text files
+    encoding = None if is_binary else 'utf-8'
+
+    # Create the directory if it doesn't exist
     path = Path(folder_name)
-    path.mkdir(parents=True, exist_ok=True) #Use this to create directory in the code rather than manual in the terminal
-    with open(f"{folder_name}/{filename}", mode) as file:
+    path.mkdir(parents=True, exist_ok=True)
+
+    # Write the content to the file
+    with open(path / filename, mode, encoding=encoding) as file:
         file.write(content)
 
-def fetch_and_write_csv_data(csv_folder_name, csv_filename,csv_url):
-    response = requests.get(url)
+
+def fetch_and_write_csv_data(csv_folder_name, csv_filename,csv_url, data_type='csv'):
+    response = requests.get(csv_url)
     if response.status_code == 200:
-        if data_type == 'text' or data_type == 'csv':
-            write_to_file(folder_name, filename, response.text)
-        elif data_type == 'excel':
-            write_to_file(folder_name, filename, response.content, is_binary=True)
-       
+        write_to_file(csv_folder_name, csv_filename, response.text)     
     else:
         print(f"Failed to fetch {data_type} data: {response.status_code}")
 
 
-def fetch_and_write_excel_data(excel_folder_name, excel_filename,excel_url):
-    response = requests.get(url)
+def fetch_and_write_excel_data(excel_folder_name, excel_filename,excel_url,data_type='excel'):
+    response = requests.get(excel_url)
     if response.status_code == 200:
-        if data_type == 'text' or data_type == 'csv':
-            write_to_file(folder_name, filename, response.text)
-        elif data_type == 'excel':
-            write_to_file(folder_name, filename, response.content, is_binary=True)
-       
+        write_to_file(excel_folder_name, excel_filename, response.content, is_binary=True) 
     else:
         print(f"Failed to fetch {data_type} data: {response.status_code}")
 
-def fetch_and_write_json_data(json_folder_name, json_filename,json_url):
-    response = requests.get(url)
+def fetch_and_write_json_data(json_folder_name, json_filename,json_url,data_type='json'):
+    response = requests.get(json_url)
     if response.status_code == 200:
-        if data_type == 'text' or data_type == 'csv':
-            write_to_file(folder_name, filename, response.text)
-        elif data_type == 'excel':
-            write_to_file(folder_name, filename, response.content, is_binary=True)
-       
+        write_to_file(json_folder_name, json_filename, response.text)
     else:
         print(f"Failed to fetch {data_type} data: {response.status_code}")
 
-def fetch_and_write_txt_data(folder_name, filename, url, data_type):
-    response = requests.get(url)
+def fetch_and_write_txt_data(txt_folder_name, txt_filename, txt_url, data_type='text'):
+    response = requests.get(txt_url)
     if response.status_code == 200:
-        if data_type == 'text' or data_type == 'csv':
-            write_to_file(folder_name, filename, response.text)
-        elif data_type == 'excel':
-            write_to_file(folder_name, filename, response.content, is_binary=True)
-       
+        write_to_file(txt_folder_name, txt_filename, response.text)
     else:
         print(f"Failed to fetch {data_type} data: {response.status_code}")
 
@@ -138,7 +130,6 @@ def process_csv_file(csv_url, csv_filename):
 
 # Example usage
 process_csv_file('csv_url', 'csv_filename.txt')
-
 
 """Function 3. Process Excel Data: Extract and analyze data from 
 Excel files to produce meaningful statistics, summaries, or insights, 
