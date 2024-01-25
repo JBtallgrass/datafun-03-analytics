@@ -11,8 +11,8 @@ import requests
 
 
 # Local module imports
-import JBallard_utils  # lower case for consistency
-import Jballard_projsetup # make this a lower case next time
+import jballard_projsetup
+import jballard_utils
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')

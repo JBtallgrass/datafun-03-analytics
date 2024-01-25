@@ -8,7 +8,7 @@ import time
 from pathlib import Path # added for consistnecy in using Path
 
 # Import my modules
-import JBallard_utils
+import jballard_utils
 
 # Function Definitions
 
@@ -87,7 +87,7 @@ def main():
     ''' Main function to demonstrate module capabilities. '''
 
     # Print byline from imported module
-    print(f"Byline: {JBallard_utils.byline}")
+    print(f"Byline: {jballard_utils.byline}")
 
     # Call function 1 to create folders for a range (e.g. years)
     create_folders_for_range(start_year=2020, end_year=2023)
