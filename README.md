@@ -45,15 +45,19 @@ This project will emphasize tasks learned in Module 3 that focus on utilizing Gi
 
 ### :three: Step 3. Data Acquisition
 
+The data cquisiton was the hardest part of the project- pnce I had the idea of what was input and what was output ( I named my files that way) it was easier.
 
 ### :four: Step 4. Write Data
-
+Gaing a better understanding of the process helped me correct the errors and postional arguments.  THe textbook and material are good resources, just take multiple times to understand the concept.
 
 ### :five: Step 5. Data Analysis output
+Understanding what the code was doing mad the biggest differnce in this part of the process. I found that by naming the output file and input file made my understanding of the process easier.
 
 ### :six: Step 6. Exception Handling
+I am interested to find out how to make this function for the whole project across multiple data types.  Once I figure this out I will make this boilplate code that I include (with specific modifications) in all of my projects.
 
 ### :seven: Step 7. Main Function
+The main function is still lost on me- I will need to gain a better understanding of the main() and how it plays into the code.
 
 ### :eight: Step 8. Conditional Script Execution
 
@@ -62,8 +66,6 @@ This project will emphasize tasks learned in Module 3 that focus on utilizing Gi
 * Documentation
 * Presentation
 * Professionalism
-
-
 
 #### https://github.com/markdown-templates/markdown-emojis
 #### https://www.gutenberg.org/cache/epub/1946/pg1946.txt
