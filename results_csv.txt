@@ -1,0 +1,12 @@
+Basic Statistical Summary:
+       Ladder score  Standard error of ladder score  ...  Explained by: Perceptions of corruption  Dystopia + residual
+count     153.00000                      153.000000  ...                               153.000000           153.000000
+mean        5.47324                        0.053538  ...                                 0.130718             1.972317
+std         1.11227                        0.018183  ...                                 0.113097             0.563638
+min         2.56690                        0.025902  ...                                 0.000000             0.257241
+25%         4.72410                        0.040698  ...                                 0.055805             1.629928
+50%         5.51500                        0.050606  ...                                 0.098435             2.046272
+75%         6.22850                        0.060677  ...                                 0.163064             2.350267
+max         7.80870                        0.120590  ...                                 0.533162             3.440810
+
+[8 rows x 18 columns]
