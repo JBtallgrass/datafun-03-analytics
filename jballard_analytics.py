@@ -34,10 +34,10 @@ def write_to_file(folder_name, filename, content, is_binary=False):
         file.write(content)
 
 
-def fetch_and_write_csv_data(csv_folder_name, csv_filename,csv_url, data_type='csv'):
-    response = requests.get(csv_url)
+def fetch_and_write_csv_data(csv_folder_name, csv_output_file,csv_input_file, data_type='csv'):
+    response = requests.get()
     if response.status_code == 200:
-        write_to_file(csv_folder_name, csv_filename, response.text)     
+        write_to_file(csv_folder_name, csv_output_file, response.text)     
     else:
         print(f"Failed to fetch {data_type} data: {response.status_code}")
 
@@ -69,18 +69,18 @@ def fetch_and_write_txt_data(txt_folder_name, txt_filename, txt_url, data_type='
  Analyze text data to generate statistics like word count, frequency of words, etc., 
  and format these findings into a readable text file."""
 
-def process_txt_file(txt_url, txt_filename):
+def process_txt_file(txt_input_file, txt_ouput_file):
     """Processes a text file to compute word count and word frequency.
     :param text_url: Path to the input text file text_url.
     :param txt_filename: Path to the output text file where the statistics will be saved txt_filename.
     """
     try:
         # Read the input file
-        with open(txt_url, 'r', encoding='utf-8') as file:
-            txt_url = file.read()
+        with open(txt_input_file, 'r', encoding='utf-8') as file:
+            txt_input_file = file.read()
 
         # Normalize the text to lowercase and split into words
-        words = txt_url.lower().split()
+        words = txt_input_file.lower().split()
 
         # Count the total number of words
         total_words = len(words)
@@ -91,7 +91,7 @@ def process_txt_file(txt_url, txt_filename):
             word_frequency[word] = word_frequency.get(word, 0) + 1
 
         # Write the statistics to the output file
-        with open(txt_filename, 'w', encoding='utf-8') as file:
+        with open(txt_output_file, 'w', encoding='utf-8') as file:
             file.write(f"Total Words: {total_words}\n")
             file.write("Word Frequencies:\n")
             for word, freq in word_frequency.items():
